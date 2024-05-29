@@ -5,14 +5,22 @@ import time
 import traceback
 import sys
 import copy
-import torch
+# import torch
 import torch.backends.cudnn as cudnn
-import torch.nn as nn
+# import torch.nn as nn
+
+import mindspore
+from mindspore import nn
+from mindspore import ops
+from mindspore.dataset import vision, transforms
+from mindspore.dataset import MnistDataset
+
 
 # option file should be modified according to your expriment
 from options import Option
 
-import torchvision.transforms as transforms
+# import torchvision.transforms as transforms
+import mindspore.dataset as 
 
 import utils as utils
 from quantization_utils.quant_modules import *
