@@ -1,0 +1,699 @@
+2021-11-09 10:45:44,645 INFO: |===>The used PyTorch version is 1.7.0+cu110
+2021-11-09 10:45:44,685 INFO: |===>Creating data loader for cifar100
+2021-11-09 10:45:50,338 INFO: CIFARResNet(
+  (features): Sequential(
+    (0): ConvBlock(
+      (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+      (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (activ): Sequential(
+        (0): ReLU(inplace=True)
+        (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+      )
+    )
+    (1): Sequential(
+      (0): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+      (1): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+      (2): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(16, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+    )
+    (2): Sequential(
+      (0): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (identity_conv): ConvBlock(
+          (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+          (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+      (1): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+      (2): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+    )
+    (3): Sequential(
+      (0): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (identity_conv): ConvBlock(
+          (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+          (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+      (1): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+      (2): ResUnit(
+        (body): ResBlock(
+          (conv1): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+            (activ): Sequential(
+              (0): ReLU(inplace=True)
+              (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+            )
+          )
+          (conv2): ConvBlock(
+            (conv): (Quant_Conv2d() weight_bit=4, full_precision_flag=False)
+            (bn): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+          )
+        )
+        (activ): Sequential(
+          (0): ReLU(inplace=True)
+          (1): QuantAct(activation_bit=4, full_precision_flag=False, running_stat=True, Act_min: 0.00, Act_max: 0.00)
+        )
+      )
+    )
+    (4): AvgPool2d(kernel_size=8, stride=1, padding=0)
+  )
+  (output): (Quant_Linear() weight_bit=4, full_precision_flag=False)
+)
+2021-11-09 10:45:50,458 INFO: /media/disk1/nangongrui/result/resnet20_cifar100_gaussian_ours-abc2-1.pickle
+2021-11-09 10:45:53,776 INFO: /media/disk1/nangongrui/result/resnet20_cifar100_labels_ours-abc2-1.pickle
+2021-11-09 10:45:53,800 INFO: data number after clean5120
+2021-11-09 10:45:53,800 INFO: data number after clip5120
+2021-11-09 10:46:02,871 INFO: [Epoch 1/100] [Batch 200/200] [acc: 1.0000%] [G loss: 5.614616] [One-hot loss: 5.261804] [BNS_loss:3.528122] [S loss: 16.768356] 
+2021-11-09 10:46:05,041 INFO: Save model! The path is./save_cifar100/log_cifar100_bs256_lr0.1000_TELCNN_baseline_optSGD_qw4_qa4_epoch100_cifar100_4bit_292_repeat/model.pth
+2021-11-09 10:46:05,059 INFO: #==>Best Result is: Top1 Error: 49.800000, Top5 Error: 21.620000
+2021-11-09 10:46:05,059 INFO: #==>Best Result is: Top1 Accuracy: 50.200000, Top5 Accuracy: 78.380000
+2021-11-09 10:46:14,528 INFO: [Epoch 2/100] [Batch 200/200] [acc: 0.9688%] [G loss: 5.058521] [One-hot loss: 4.751853] [BNS_loss:3.066676] [S loss: 12.173294] 
+2021-11-09 10:46:16,194 INFO: #==>Best Result is: Top1 Error: 49.800000, Top5 Error: 21.620000
+2021-11-09 10:46:16,194 INFO: #==>Best Result is: Top1 Accuracy: 50.200000, Top5 Accuracy: 78.380000
+2021-11-09 10:46:25,394 INFO: [Epoch 3/100] [Batch 200/200] [acc: 1.5312%] [G loss: 5.229933] [One-hot loss: 4.944034] [BNS_loss:2.858998] [S loss: 14.337473] 
+2021-11-09 10:46:27,051 INFO: #==>Best Result is: Top1 Error: 49.800000, Top5 Error: 21.620000
+2021-11-09 10:46:27,051 INFO: #==>Best Result is: Top1 Accuracy: 50.200000, Top5 Accuracy: 78.380000
+2021-11-09 10:46:36,563 INFO: [Epoch 4/100] [Batch 200/200] [acc: 1.4375%] [G loss: 5.241572] [One-hot loss: 4.969751] [BNS_loss:2.718208] [S loss: 10.789747] 
+2021-11-09 10:46:38,134 INFO: #==>Best Result is: Top1 Error: 49.800000, Top5 Error: 21.620000
+2021-11-09 10:46:38,134 INFO: #==>Best Result is: Top1 Accuracy: 50.200000, Top5 Accuracy: 78.380000
+2021-11-09 10:46:41,876 INFO: re-iterator of direct_dataload
+2021-11-09 10:46:45,974 INFO: re-iterator of direct_dataload
+2021-11-09 10:46:50,173 INFO: re-iterator of direct_dataload
+2021-11-09 10:46:53,665 INFO: re-iterator of direct_dataload
+2021-11-09 10:46:56,755 INFO: re-iterator of direct_dataload
+2021-11-09 10:46:59,805 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:03,074 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:06,234 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:09,170 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:11,886 INFO: [Epoch 5/100] [Batch 200/200] [acc: 95.4727%][S loss: 6.545474] 
+2021-11-09 10:47:13,570 INFO: Save model! The path is./save_cifar100/log_cifar100_bs256_lr0.1000_TELCNN_baseline_optSGD_qw4_qa4_epoch100_cifar100_4bit_292_repeat/model.pth
+2021-11-09 10:47:13,583 INFO: #==>Best Result is: Top1 Error: 37.420000, Top5 Error: 13.390000
+2021-11-09 10:47:13,583 INFO: #==>Best Result is: Top1 Accuracy: 62.580000, Top5 Accuracy: 86.610000
+2021-11-09 10:47:17,219 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:21,491 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:26,341 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:30,557 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:35,754 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:40,325 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:44,772 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:48,041 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:52,563 INFO: re-iterator of direct_dataload
+2021-11-09 10:47:56,852 INFO: [Epoch 6/100] [Batch 200/200] [acc: 95.4297%][S loss: 6.587977] 
+2021-11-09 10:47:58,415 INFO: Save model! The path is./save_cifar100/log_cifar100_bs256_lr0.1000_TELCNN_baseline_optSGD_qw4_qa4_epoch100_cifar100_4bit_292_repeat/model.pth
+2021-11-09 10:47:58,430 INFO: #==>Best Result is: Top1 Error: 35.660000, Top5 Error: 11.830000
+2021-11-09 10:47:58,430 INFO: #==>Best Result is: Top1 Accuracy: 64.340000, Top5 Accuracy: 88.170000
+2021-11-09 10:48:03,300 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:08,169 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:12,572 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:17,057 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:24,811 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:32,208 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:37,855 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:42,964 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:46,260 INFO: re-iterator of direct_dataload
+2021-11-09 10:48:50,199 INFO: [Epoch 7/100] [Batch 200/200] [acc: 95.3984%][S loss: 4.955897] 
+2021-11-09 10:48:51,815 INFO: Save model! The path is./save_cifar100/log_cifar100_bs256_lr0.1000_TELCNN_baseline_optSGD_qw4_qa4_epoch100_cifar100_4bit_292_repeat/model.pth
+2021-11-09 10:48:51,827 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 10:48:51,827 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 10:48:55,883 INFO: re-iterator of direct_dataload
+2021-11-09 10:49:00,414 INFO: re-iterator of direct_dataload
+2021-11-09 10:49:03,858 INFO: re-iterator of direct_dataload
+2021-11-09 10:49:08,535 INFO: re-iterator of direct_dataload
+2021-11-09 10:49:19,146 INFO: re-iterator of direct_dataload
+2021-11-09 10:49:57,545 INFO: re-iterator of direct_dataload
+2021-11-09 10:50:39,540 INFO: re-iterator of direct_dataload
+2021-11-09 10:51:30,090 INFO: re-iterator of direct_dataload
+2021-11-09 10:52:25,236 INFO: re-iterator of direct_dataload
+2021-11-09 10:53:12,105 INFO: [Epoch 8/100] [Batch 200/200] [acc: 95.3984%][S loss: 7.237513] 
+2021-11-09 10:53:14,384 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 10:53:14,384 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 10:54:10,545 INFO: re-iterator of direct_dataload
+2021-11-09 10:54:58,090 INFO: re-iterator of direct_dataload
+2021-11-09 10:55:52,252 INFO: re-iterator of direct_dataload
+2021-11-09 10:56:40,581 INFO: re-iterator of direct_dataload
+2021-11-09 10:57:31,290 INFO: re-iterator of direct_dataload
+2021-11-09 10:58:20,888 INFO: re-iterator of direct_dataload
+2021-11-09 10:59:17,811 INFO: re-iterator of direct_dataload
+2021-11-09 11:00:07,123 INFO: re-iterator of direct_dataload
+2021-11-09 11:00:56,457 INFO: re-iterator of direct_dataload
+2021-11-09 11:01:41,798 INFO: [Epoch 9/100] [Batch 200/200] [acc: 95.4883%][S loss: 5.530205] 
+2021-11-09 11:01:43,804 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 11:01:43,806 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 11:02:36,366 INFO: re-iterator of direct_dataload
+2021-11-09 11:03:34,134 INFO: re-iterator of direct_dataload
+2021-11-09 11:04:26,034 INFO: re-iterator of direct_dataload
+2021-11-09 11:05:19,713 INFO: re-iterator of direct_dataload
+2021-11-09 11:06:14,431 INFO: re-iterator of direct_dataload
+2021-11-09 11:07:02,457 INFO: re-iterator of direct_dataload
+2021-11-09 11:07:57,655 INFO: re-iterator of direct_dataload
+2021-11-09 11:08:47,652 INFO: re-iterator of direct_dataload
+2021-11-09 11:09:34,882 INFO: re-iterator of direct_dataload
+2021-11-09 11:10:27,271 INFO: [Epoch 10/100] [Batch 200/200] [acc: 95.3945%][S loss: 7.606056] 
+2021-11-09 11:10:29,323 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 11:10:29,324 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 11:11:17,718 INFO: re-iterator of direct_dataload
+2021-11-09 11:12:09,190 INFO: re-iterator of direct_dataload
+2021-11-09 11:12:58,835 INFO: re-iterator of direct_dataload
+2021-11-09 11:13:44,459 INFO: re-iterator of direct_dataload
+2021-11-09 11:14:30,617 INFO: re-iterator of direct_dataload
+2021-11-09 11:15:17,230 INFO: re-iterator of direct_dataload
+2021-11-09 11:16:04,679 INFO: re-iterator of direct_dataload
+2021-11-09 11:16:49,955 INFO: re-iterator of direct_dataload
+2021-11-09 11:17:52,291 INFO: re-iterator of direct_dataload
+2021-11-09 11:18:39,667 INFO: [Epoch 11/100] [Batch 200/200] [acc: 95.4590%][S loss: nan] 
+2021-11-09 11:18:41,705 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 11:18:41,705 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 11:19:34,203 INFO: re-iterator of direct_dataload
+2021-11-09 11:20:20,937 INFO: re-iterator of direct_dataload
+2021-11-09 11:21:07,618 INFO: re-iterator of direct_dataload
+2021-11-09 11:22:02,314 INFO: re-iterator of direct_dataload
+2021-11-09 11:22:47,973 INFO: re-iterator of direct_dataload
+2021-11-09 11:23:40,727 INFO: re-iterator of direct_dataload
+2021-11-09 11:24:32,023 INFO: re-iterator of direct_dataload
+2021-11-09 11:25:17,951 INFO: re-iterator of direct_dataload
+2021-11-09 11:26:12,856 INFO: re-iterator of direct_dataload
+2021-11-09 11:27:02,606 INFO: [Epoch 12/100] [Batch 200/200] [acc: 95.4121%][S loss: nan] 
+2021-11-09 11:27:04,695 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 11:27:04,696 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 11:27:50,684 INFO: re-iterator of direct_dataload
+2021-11-09 11:28:44,414 INFO: re-iterator of direct_dataload
+2021-11-09 11:29:30,785 INFO: re-iterator of direct_dataload
+2021-11-09 11:30:18,897 INFO: re-iterator of direct_dataload
+2021-11-09 11:31:11,309 INFO: re-iterator of direct_dataload
+2021-11-09 11:31:52,874 INFO: re-iterator of direct_dataload
+2021-11-09 11:32:44,642 INFO: re-iterator of direct_dataload
+2021-11-09 11:33:43,970 INFO: re-iterator of direct_dataload
+2021-11-09 11:34:36,532 INFO: re-iterator of direct_dataload
+2021-11-09 11:35:23,263 INFO: [Epoch 13/100] [Batch 200/200] [acc: 95.4238%][S loss: nan] 
+2021-11-09 11:35:25,353 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 11:35:25,353 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 11:36:15,175 INFO: re-iterator of direct_dataload
+2021-11-09 11:37:02,414 INFO: re-iterator of direct_dataload
+2021-11-09 11:37:50,098 INFO: re-iterator of direct_dataload
+2021-11-09 11:38:36,033 INFO: re-iterator of direct_dataload
+2021-11-09 11:39:22,168 INFO: re-iterator of direct_dataload
+2021-11-09 11:40:16,709 INFO: re-iterator of direct_dataload
+2021-11-09 11:41:17,386 INFO: re-iterator of direct_dataload
+2021-11-09 11:42:10,627 INFO: re-iterator of direct_dataload
+2021-11-09 11:43:00,160 INFO: re-iterator of direct_dataload
+2021-11-09 11:43:47,241 INFO: [Epoch 14/100] [Batch 200/200] [acc: 95.4707%][S loss: nan] 
+2021-11-09 11:43:49,311 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 11:43:49,311 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 11:44:38,809 INFO: re-iterator of direct_dataload
+2021-11-09 11:45:35,357 INFO: re-iterator of direct_dataload
+2021-11-09 11:46:30,264 INFO: re-iterator of direct_dataload
+2021-11-09 11:47:16,779 INFO: re-iterator of direct_dataload
+2021-11-09 11:48:05,579 INFO: re-iterator of direct_dataload
+2021-11-09 11:48:52,842 INFO: re-iterator of direct_dataload
+2021-11-09 11:49:39,713 INFO: re-iterator of direct_dataload
+2021-11-09 11:50:33,409 INFO: re-iterator of direct_dataload
+2021-11-09 11:51:28,054 INFO: re-iterator of direct_dataload
+2021-11-09 11:52:17,528 INFO: [Epoch 15/100] [Batch 200/200] [acc: 95.4551%][S loss: nan] 
+2021-11-09 11:52:19,549 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 11:52:19,549 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 11:53:12,760 INFO: re-iterator of direct_dataload
+2021-11-09 11:54:02,253 INFO: re-iterator of direct_dataload
+2021-11-09 11:54:54,376 INFO: re-iterator of direct_dataload
+2021-11-09 11:55:51,414 INFO: re-iterator of direct_dataload
+2021-11-09 11:56:48,600 INFO: re-iterator of direct_dataload
+2021-11-09 11:57:39,480 INFO: re-iterator of direct_dataload
+2021-11-09 11:58:40,657 INFO: re-iterator of direct_dataload
+2021-11-09 11:59:28,136 INFO: re-iterator of direct_dataload
+2021-11-09 12:00:16,427 INFO: re-iterator of direct_dataload
+2021-11-09 12:01:06,209 INFO: [Epoch 16/100] [Batch 200/200] [acc: 95.3867%][S loss: nan] 
+2021-11-09 12:01:08,263 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 12:01:08,264 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 12:02:00,536 INFO: re-iterator of direct_dataload
+2021-11-09 12:03:02,198 INFO: re-iterator of direct_dataload
+2021-11-09 12:03:49,077 INFO: re-iterator of direct_dataload
+2021-11-09 12:04:44,951 INFO: re-iterator of direct_dataload
+2021-11-09 12:05:23,552 INFO: re-iterator of direct_dataload
+2021-11-09 12:06:17,686 INFO: re-iterator of direct_dataload
+2021-11-09 12:07:05,168 INFO: re-iterator of direct_dataload
+2021-11-09 12:07:57,860 INFO: re-iterator of direct_dataload
+2021-11-09 12:08:53,795 INFO: re-iterator of direct_dataload
+2021-11-09 12:09:40,130 INFO: [Epoch 17/100] [Batch 200/200] [acc: 95.4141%][S loss: nan] 
+2021-11-09 12:09:42,204 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 12:09:42,204 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 12:10:35,504 INFO: re-iterator of direct_dataload
+2021-11-09 12:11:20,641 INFO: re-iterator of direct_dataload
+2021-11-09 12:12:09,585 INFO: re-iterator of direct_dataload
+2021-11-09 12:13:06,946 INFO: re-iterator of direct_dataload
+2021-11-09 12:13:48,974 INFO: re-iterator of direct_dataload
+2021-11-09 12:14:32,841 INFO: re-iterator of direct_dataload
+2021-11-09 12:15:22,701 INFO: re-iterator of direct_dataload
+2021-11-09 12:16:31,720 INFO: re-iterator of direct_dataload
+2021-11-09 12:17:22,261 INFO: re-iterator of direct_dataload
+2021-11-09 12:18:13,834 INFO: [Epoch 18/100] [Batch 200/200] [acc: 95.4180%][S loss: nan] 
+2021-11-09 12:18:15,807 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 12:18:15,807 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 12:19:02,599 INFO: re-iterator of direct_dataload
+2021-11-09 12:19:55,104 INFO: re-iterator of direct_dataload
+2021-11-09 12:20:43,387 INFO: re-iterator of direct_dataload
+2021-11-09 12:21:33,659 INFO: re-iterator of direct_dataload
+2021-11-09 12:22:25,259 INFO: re-iterator of direct_dataload
+2021-11-09 12:23:19,742 INFO: re-iterator of direct_dataload
+2021-11-09 12:24:12,861 INFO: re-iterator of direct_dataload
+2021-11-09 12:25:04,837 INFO: re-iterator of direct_dataload
+2021-11-09 12:25:51,699 INFO: re-iterator of direct_dataload
+2021-11-09 12:26:41,296 INFO: [Epoch 19/100] [Batch 200/200] [acc: 95.4277%][S loss: nan] 
+2021-11-09 12:26:43,374 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 12:26:43,376 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 12:27:29,237 INFO: re-iterator of direct_dataload
+2021-11-09 12:28:23,103 INFO: re-iterator of direct_dataload
+2021-11-09 12:29:13,439 INFO: re-iterator of direct_dataload
+2021-11-09 12:30:08,259 INFO: re-iterator of direct_dataload
+2021-11-09 12:30:56,115 INFO: re-iterator of direct_dataload
+2021-11-09 12:31:41,089 INFO: re-iterator of direct_dataload
+2021-11-09 12:32:24,257 INFO: re-iterator of direct_dataload
+2021-11-09 12:33:14,707 INFO: re-iterator of direct_dataload
+2021-11-09 12:34:03,464 INFO: re-iterator of direct_dataload
+2021-11-09 12:34:52,093 INFO: [Epoch 20/100] [Batch 200/200] [acc: 95.4141%][S loss: nan] 
+2021-11-09 12:34:54,148 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 12:34:54,149 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 12:35:42,153 INFO: re-iterator of direct_dataload
+2021-11-09 12:36:34,159 INFO: re-iterator of direct_dataload
+2021-11-09 12:37:26,992 INFO: re-iterator of direct_dataload
+2021-11-09 12:38:14,856 INFO: re-iterator of direct_dataload
+2021-11-09 12:39:00,322 INFO: re-iterator of direct_dataload
+2021-11-09 12:39:45,850 INFO: re-iterator of direct_dataload
+2021-11-09 12:40:35,620 INFO: re-iterator of direct_dataload
+2021-11-09 12:41:21,466 INFO: re-iterator of direct_dataload
+2021-11-09 12:42:17,877 INFO: re-iterator of direct_dataload
+2021-11-09 12:43:14,563 INFO: [Epoch 21/100] [Batch 200/200] [acc: 95.4355%][S loss: nan] 
+2021-11-09 12:43:16,601 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 12:43:16,601 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 12:44:06,939 INFO: re-iterator of direct_dataload
+2021-11-09 12:44:58,029 INFO: re-iterator of direct_dataload
+2021-11-09 12:45:47,285 INFO: re-iterator of direct_dataload
+2021-11-09 12:46:36,198 INFO: re-iterator of direct_dataload
+2021-11-09 12:47:30,093 INFO: re-iterator of direct_dataload
+2021-11-09 12:48:14,835 INFO: re-iterator of direct_dataload
+2021-11-09 12:48:58,671 INFO: re-iterator of direct_dataload
+2021-11-09 12:49:48,945 INFO: re-iterator of direct_dataload
+2021-11-09 12:50:48,401 INFO: re-iterator of direct_dataload
+2021-11-09 12:51:40,473 INFO: [Epoch 22/100] [Batch 200/200] [acc: 95.4414%][S loss: nan] 
+2021-11-09 12:51:42,538 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 12:51:42,538 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 12:52:33,077 INFO: re-iterator of direct_dataload
+2021-11-09 12:53:28,273 INFO: re-iterator of direct_dataload
+2021-11-09 12:54:17,614 INFO: re-iterator of direct_dataload
+2021-11-09 12:55:06,225 INFO: re-iterator of direct_dataload
+2021-11-09 12:55:57,992 INFO: re-iterator of direct_dataload
+2021-11-09 12:56:40,530 INFO: re-iterator of direct_dataload
+2021-11-09 12:57:34,793 INFO: re-iterator of direct_dataload
+2021-11-09 12:58:24,959 INFO: re-iterator of direct_dataload
+2021-11-09 12:59:16,322 INFO: re-iterator of direct_dataload
+2021-11-09 13:00:08,997 INFO: [Epoch 23/100] [Batch 200/200] [acc: 95.4863%][S loss: nan] 
+2021-11-09 13:00:10,989 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 13:00:10,989 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 13:01:06,146 INFO: re-iterator of direct_dataload
+2021-11-09 13:01:54,534 INFO: re-iterator of direct_dataload
+2021-11-09 13:02:47,523 INFO: re-iterator of direct_dataload
+2021-11-09 13:03:36,521 INFO: re-iterator of direct_dataload
+2021-11-09 13:04:22,602 INFO: re-iterator of direct_dataload
+2021-11-09 13:05:04,317 INFO: re-iterator of direct_dataload
+2021-11-09 13:05:52,874 INFO: re-iterator of direct_dataload
+2021-11-09 13:06:42,624 INFO: re-iterator of direct_dataload
+2021-11-09 13:07:28,482 INFO: re-iterator of direct_dataload
+2021-11-09 13:08:22,533 INFO: [Epoch 24/100] [Batch 200/200] [acc: 95.4707%][S loss: nan] 
+2021-11-09 13:08:24,661 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 13:08:24,662 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 13:09:19,617 INFO: re-iterator of direct_dataload
+2021-11-09 13:10:13,502 INFO: re-iterator of direct_dataload
+2021-11-09 13:11:05,058 INFO: re-iterator of direct_dataload
+2021-11-09 13:11:58,742 INFO: re-iterator of direct_dataload
+2021-11-09 13:12:57,590 INFO: re-iterator of direct_dataload
+2021-11-09 13:13:40,801 INFO: re-iterator of direct_dataload
+2021-11-09 13:14:34,825 INFO: re-iterator of direct_dataload
+2021-11-09 13:15:19,791 INFO: re-iterator of direct_dataload
+2021-11-09 13:16:22,776 INFO: re-iterator of direct_dataload
+2021-11-09 13:17:17,804 INFO: [Epoch 25/100] [Batch 200/200] [acc: 95.3848%][S loss: nan] 
+2021-11-09 13:17:19,664 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 13:17:19,664 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 13:18:18,754 INFO: re-iterator of direct_dataload
+2021-11-09 13:19:07,958 INFO: re-iterator of direct_dataload
+2021-11-09 13:19:57,326 INFO: re-iterator of direct_dataload
+2021-11-09 13:20:46,482 INFO: re-iterator of direct_dataload
+2021-11-09 13:21:38,399 INFO: re-iterator of direct_dataload
+2021-11-09 13:22:24,269 INFO: re-iterator of direct_dataload
+2021-11-09 13:23:09,246 INFO: re-iterator of direct_dataload
+2021-11-09 13:23:58,077 INFO: re-iterator of direct_dataload
+2021-11-09 13:24:46,622 INFO: re-iterator of direct_dataload
+2021-11-09 13:25:30,321 INFO: [Epoch 26/100] [Batch 200/200] [acc: 95.4551%][S loss: nan] 
+2021-11-09 13:25:32,375 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 13:25:32,375 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 13:26:21,027 INFO: re-iterator of direct_dataload
+2021-11-09 13:27:05,594 INFO: re-iterator of direct_dataload
+2021-11-09 13:27:59,144 INFO: re-iterator of direct_dataload
+2021-11-09 13:28:47,019 INFO: re-iterator of direct_dataload
+2021-11-09 13:29:36,109 INFO: re-iterator of direct_dataload
+2021-11-09 13:30:25,881 INFO: re-iterator of direct_dataload
+2021-11-09 13:31:09,232 INFO: re-iterator of direct_dataload
+2021-11-09 13:32:00,214 INFO: re-iterator of direct_dataload
+2021-11-09 13:32:52,817 INFO: re-iterator of direct_dataload
+2021-11-09 13:33:44,129 INFO: [Epoch 27/100] [Batch 200/200] [acc: 95.4336%][S loss: nan] 
+2021-11-09 13:33:46,153 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 13:33:46,153 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 13:34:39,044 INFO: re-iterator of direct_dataload
+2021-11-09 13:35:31,387 INFO: re-iterator of direct_dataload
+2021-11-09 13:36:22,836 INFO: re-iterator of direct_dataload
+2021-11-09 13:37:17,278 INFO: re-iterator of direct_dataload
+2021-11-09 13:38:06,745 INFO: re-iterator of direct_dataload
+2021-11-09 13:38:53,041 INFO: re-iterator of direct_dataload
+2021-11-09 13:39:35,091 INFO: re-iterator of direct_dataload
+2021-11-09 13:40:26,443 INFO: re-iterator of direct_dataload
+2021-11-09 13:41:24,694 INFO: re-iterator of direct_dataload
+2021-11-09 13:42:08,187 INFO: [Epoch 28/100] [Batch 200/200] [acc: 95.4375%][S loss: nan] 
+2021-11-09 13:42:10,204 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 13:42:10,204 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 13:42:57,203 INFO: re-iterator of direct_dataload
+2021-11-09 13:43:47,839 INFO: re-iterator of direct_dataload
+2021-11-09 13:44:44,793 INFO: re-iterator of direct_dataload
+2021-11-09 13:45:32,109 INFO: re-iterator of direct_dataload
+2021-11-09 13:46:37,701 INFO: re-iterator of direct_dataload
+2021-11-09 13:47:29,349 INFO: re-iterator of direct_dataload
+2021-11-09 13:48:07,511 INFO: re-iterator of direct_dataload
+2021-11-09 13:48:55,302 INFO: re-iterator of direct_dataload
+2021-11-09 13:49:45,013 INFO: re-iterator of direct_dataload
+2021-11-09 13:50:32,794 INFO: [Epoch 29/100] [Batch 200/200] [acc: 95.4805%][S loss: nan] 
+2021-11-09 13:50:34,928 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 13:50:34,928 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 13:51:24,202 INFO: re-iterator of direct_dataload
+2021-11-09 13:52:14,800 INFO: re-iterator of direct_dataload
+2021-11-09 13:53:14,070 INFO: re-iterator of direct_dataload
+2021-11-09 13:54:05,829 INFO: re-iterator of direct_dataload
+2021-11-09 13:54:57,985 INFO: re-iterator of direct_dataload
+2021-11-09 13:55:50,692 INFO: re-iterator of direct_dataload
+2021-11-09 13:56:42,041 INFO: re-iterator of direct_dataload
+2021-11-09 13:57:28,306 INFO: re-iterator of direct_dataload
+2021-11-09 13:58:19,136 INFO: re-iterator of direct_dataload
+2021-11-09 13:58:58,897 INFO: [Epoch 30/100] [Batch 200/200] [acc: 95.4336%][S loss: nan] 
+2021-11-09 13:59:00,922 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 13:59:00,922 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 13:59:49,971 INFO: re-iterator of direct_dataload
+2021-11-09 14:00:36,280 INFO: re-iterator of direct_dataload
+2021-11-09 14:01:20,372 INFO: re-iterator of direct_dataload
+2021-11-09 14:02:06,021 INFO: re-iterator of direct_dataload
+2021-11-09 14:02:59,594 INFO: re-iterator of direct_dataload
+2021-11-09 14:03:45,373 INFO: re-iterator of direct_dataload
+2021-11-09 14:04:31,923 INFO: re-iterator of direct_dataload
+2021-11-09 14:05:16,854 INFO: re-iterator of direct_dataload
+2021-11-09 14:06:07,118 INFO: re-iterator of direct_dataload
+2021-11-09 14:06:56,409 INFO: [Epoch 31/100] [Batch 200/200] [acc: 95.4395%][S loss: nan] 
+2021-11-09 14:06:58,381 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 14:06:58,382 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 14:07:43,537 INFO: re-iterator of direct_dataload
+2021-11-09 14:08:28,918 INFO: re-iterator of direct_dataload
+2021-11-09 14:09:17,587 INFO: re-iterator of direct_dataload
+2021-11-09 14:10:04,608 INFO: re-iterator of direct_dataload
+2021-11-09 14:10:58,709 INFO: re-iterator of direct_dataload
+2021-11-09 14:11:50,824 INFO: re-iterator of direct_dataload
+2021-11-09 14:12:35,916 INFO: re-iterator of direct_dataload
+2021-11-09 14:13:25,224 INFO: re-iterator of direct_dataload
+2021-11-09 14:14:09,450 INFO: re-iterator of direct_dataload
+2021-11-09 14:14:56,273 INFO: [Epoch 32/100] [Batch 200/200] [acc: 95.4434%][S loss: nan] 
+2021-11-09 14:14:58,298 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 14:14:58,298 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 14:15:56,408 INFO: re-iterator of direct_dataload
+2021-11-09 14:16:46,426 INFO: re-iterator of direct_dataload
+2021-11-09 14:17:41,212 INFO: re-iterator of direct_dataload
+2021-11-09 14:18:25,399 INFO: re-iterator of direct_dataload
+2021-11-09 14:19:15,154 INFO: re-iterator of direct_dataload
+2021-11-09 14:20:04,146 INFO: re-iterator of direct_dataload
+2021-11-09 14:20:48,275 INFO: re-iterator of direct_dataload
+2021-11-09 14:21:23,082 INFO: re-iterator of direct_dataload
+2021-11-09 14:22:14,263 INFO: re-iterator of direct_dataload
+2021-11-09 14:23:00,503 INFO: [Epoch 33/100] [Batch 200/200] [acc: 95.4648%][S loss: nan] 
+2021-11-09 14:23:02,619 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 14:23:02,620 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 14:24:01,674 INFO: re-iterator of direct_dataload
+2021-11-09 14:24:47,121 INFO: re-iterator of direct_dataload
+2021-11-09 14:25:39,330 INFO: re-iterator of direct_dataload
+2021-11-09 14:26:28,657 INFO: re-iterator of direct_dataload
+2021-11-09 14:27:18,645 INFO: re-iterator of direct_dataload
+2021-11-09 14:28:12,268 INFO: re-iterator of direct_dataload
+2021-11-09 14:29:01,854 INFO: re-iterator of direct_dataload
+2021-11-09 14:29:40,190 INFO: re-iterator of direct_dataload
+2021-11-09 14:30:26,173 INFO: re-iterator of direct_dataload
+2021-11-09 14:31:15,429 INFO: [Epoch 34/100] [Batch 200/200] [acc: 95.4062%][S loss: nan] 
+2021-11-09 14:31:17,475 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 14:31:17,475 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 14:32:09,552 INFO: re-iterator of direct_dataload
+2021-11-09 14:32:58,505 INFO: re-iterator of direct_dataload
+2021-11-09 14:33:54,659 INFO: re-iterator of direct_dataload
+2021-11-09 14:34:41,914 INFO: re-iterator of direct_dataload
+2021-11-09 14:35:31,880 INFO: re-iterator of direct_dataload
+2021-11-09 14:36:23,237 INFO: re-iterator of direct_dataload
+2021-11-09 14:37:12,515 INFO: re-iterator of direct_dataload
+2021-11-09 14:37:59,361 INFO: re-iterator of direct_dataload
+2021-11-09 14:38:49,300 INFO: re-iterator of direct_dataload
+2021-11-09 14:39:36,579 INFO: [Epoch 35/100] [Batch 200/200] [acc: 95.4453%][S loss: nan] 
+2021-11-09 14:39:38,657 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 14:39:38,658 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 14:40:32,703 INFO: re-iterator of direct_dataload
+2021-11-09 14:41:15,494 INFO: re-iterator of direct_dataload
+2021-11-09 14:42:00,297 INFO: re-iterator of direct_dataload
+2021-11-09 14:42:48,354 INFO: re-iterator of direct_dataload
+2021-11-09 14:43:38,522 INFO: re-iterator of direct_dataload
+2021-11-09 14:44:24,118 INFO: re-iterator of direct_dataload
+2021-11-09 14:45:17,071 INFO: re-iterator of direct_dataload
+2021-11-09 14:46:12,093 INFO: re-iterator of direct_dataload
+2021-11-09 14:46:59,498 INFO: re-iterator of direct_dataload
+2021-11-09 14:47:53,258 INFO: [Epoch 36/100] [Batch 200/200] [acc: 95.3965%][S loss: nan] 
+2021-11-09 14:47:55,230 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 14:47:55,230 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 14:48:44,653 INFO: re-iterator of direct_dataload
+2021-11-09 14:49:31,735 INFO: re-iterator of direct_dataload
+2021-11-09 14:50:24,012 INFO: re-iterator of direct_dataload
+2021-11-09 14:51:20,619 INFO: re-iterator of direct_dataload
+2021-11-09 14:52:11,171 INFO: re-iterator of direct_dataload
+2021-11-09 14:53:00,928 INFO: re-iterator of direct_dataload
+2021-11-09 14:53:50,387 INFO: re-iterator of direct_dataload
+2021-11-09 14:54:39,363 INFO: re-iterator of direct_dataload
+2021-11-09 14:55:17,866 INFO: re-iterator of direct_dataload
+2021-11-09 14:56:05,590 INFO: [Epoch 37/100] [Batch 200/200] [acc: 95.4297%][S loss: nan] 
+2021-11-09 14:56:07,520 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 14:56:07,521 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 14:56:56,351 INFO: re-iterator of direct_dataload
+2021-11-09 14:57:46,039 INFO: re-iterator of direct_dataload
+2021-11-09 14:58:38,257 INFO: re-iterator of direct_dataload
+2021-11-09 14:59:29,564 INFO: re-iterator of direct_dataload
+2021-11-09 15:00:17,693 INFO: re-iterator of direct_dataload
+2021-11-09 15:01:02,904 INFO: re-iterator of direct_dataload
+2021-11-09 15:01:52,447 INFO: re-iterator of direct_dataload
+2021-11-09 15:02:38,729 INFO: re-iterator of direct_dataload
+2021-11-09 15:03:17,618 INFO: re-iterator of direct_dataload
+2021-11-09 15:04:09,133 INFO: [Epoch 38/100] [Batch 200/200] [acc: 95.4355%][S loss: nan] 
+2021-11-09 15:04:11,212 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 15:04:11,212 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 15:05:06,686 INFO: re-iterator of direct_dataload
+2021-11-09 15:06:04,613 INFO: re-iterator of direct_dataload
+2021-11-09 15:06:59,973 INFO: re-iterator of direct_dataload
+2021-11-09 15:07:48,259 INFO: re-iterator of direct_dataload
+2021-11-09 15:08:40,807 INFO: re-iterator of direct_dataload
+2021-11-09 15:09:27,879 INFO: re-iterator of direct_dataload
+2021-11-09 15:10:20,820 INFO: re-iterator of direct_dataload
+2021-11-09 15:11:14,371 INFO: re-iterator of direct_dataload
+2021-11-09 15:11:56,537 INFO: re-iterator of direct_dataload
+2021-11-09 15:12:45,493 INFO: [Epoch 39/100] [Batch 200/200] [acc: 95.4355%][S loss: nan] 
+2021-11-09 15:12:47,535 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 15:12:47,535 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 15:13:41,218 INFO: re-iterator of direct_dataload
+2021-11-09 15:14:29,199 INFO: re-iterator of direct_dataload
+2021-11-09 15:15:17,217 INFO: re-iterator of direct_dataload
+2021-11-09 15:16:06,943 INFO: re-iterator of direct_dataload
+2021-11-09 15:16:52,918 INFO: re-iterator of direct_dataload
+2021-11-09 15:17:39,093 INFO: re-iterator of direct_dataload
+2021-11-09 15:18:24,789 INFO: re-iterator of direct_dataload
+2021-11-09 15:19:13,574 INFO: re-iterator of direct_dataload
+2021-11-09 15:20:07,338 INFO: re-iterator of direct_dataload
+2021-11-09 15:20:55,706 INFO: [Epoch 40/100] [Batch 200/200] [acc: 95.4121%][S loss: nan] 
+2021-11-09 15:20:57,719 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 15:20:57,720 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 15:21:46,454 INFO: re-iterator of direct_dataload
+2021-11-09 15:22:33,360 INFO: re-iterator of direct_dataload
+2021-11-09 15:23:27,767 INFO: re-iterator of direct_dataload
+2021-11-09 15:24:14,275 INFO: re-iterator of direct_dataload
+2021-11-09 15:25:03,284 INFO: re-iterator of direct_dataload
+2021-11-09 15:25:55,142 INFO: re-iterator of direct_dataload
+2021-11-09 15:26:47,208 INFO: re-iterator of direct_dataload
+2021-11-09 15:27:36,974 INFO: re-iterator of direct_dataload
+2021-11-09 15:28:18,114 INFO: re-iterator of direct_dataload
+2021-11-09 15:29:04,885 INFO: [Epoch 41/100] [Batch 200/200] [acc: 95.4941%][S loss: nan] 
+2021-11-09 15:29:07,074 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 15:29:07,075 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 15:29:55,954 INFO: re-iterator of direct_dataload
+2021-11-09 15:30:40,249 INFO: re-iterator of direct_dataload
+2021-11-09 15:31:27,964 INFO: re-iterator of direct_dataload
+2021-11-09 15:32:13,073 INFO: re-iterator of direct_dataload
+2021-11-09 15:32:54,817 INFO: re-iterator of direct_dataload
+2021-11-09 15:33:40,872 INFO: re-iterator of direct_dataload
+2021-11-09 15:34:29,311 INFO: re-iterator of direct_dataload
+2021-11-09 15:35:07,437 INFO: re-iterator of direct_dataload
+2021-11-09 15:35:51,824 INFO: re-iterator of direct_dataload
+2021-11-09 15:36:38,581 INFO: [Epoch 42/100] [Batch 200/200] [acc: 95.4258%][S loss: nan] 
+2021-11-09 15:36:40,767 INFO: #==>Best Result is: Top1 Error: 35.020000, Top5 Error: 11.560000
+2021-11-09 15:36:40,767 INFO: #==>Best Result is: Top1 Accuracy: 64.980000, Top5 Accuracy: 88.440000
+2021-11-09 15:37:25,454 INFO: re-iterator of direct_dataload
+2021-11-09 15:38:11,324 INFO: re-iterator of direct_dataload
+2021-11-09 15:38:57,233 INFO: re-iterator of direct_dataload
+2021-11-09 15:39:36,902 INFO: re-iterator of direct_dataload
+2021-11-09 15:40:24,735 INFO: re-iterator of direct_dataload
+2021-11-09 15:41:08,270 INFO: re-iterator of direct_dataload
+2021-11-09 15:41:48,396 INFO: re-iterator of direct_dataload
+2021-11-09 15:42:30,560 INFO: re-iterator of direct_dataload
+2021-11-09 15:42:55,898 INFO: re-iterator of direct_dataload
+2021-11-09 15:42:57,542 INFO: re-iterator of direct_dataload
+2021-11-09 15:42:57,716 ERROR: Training is terminating due to exception: 
+2021-11-09 15:42:57,718 INFO: Running Time is: 4:57:07.260956
+
