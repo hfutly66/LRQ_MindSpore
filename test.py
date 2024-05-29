@@ -152,9 +152,9 @@ def test(model, test_loader):
                 outputs=output, loss=loss,
                 labels=labels, top5_flag=True, mean_flag=True)
 
-            top1_error.update(single_error, images.size(0))
-            top1_loss.update(single_loss, images.size(0))
-            top5_error.update(single5_error, images.size(0))
+            top1_error.update(single_error, images.shape(0))
+            top1_loss.update(single_loss, images.shape(0))
+            top5_error.update(single5_error, images.shape(0))
             end_time = time.time()
 
             if i % 500 == 0:
