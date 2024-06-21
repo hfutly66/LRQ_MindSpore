@@ -5,19 +5,25 @@ import time
 import traceback
 import sys
 import copy
-import torch
-import torch.backends.cudnn as cudnn
-import torch.nn as nn
+# import torch
+# import torch.nn as nn
+
+import mindspore
+from mindspore import nn
+from mindspore import ops
+from mindspore.dataset import vision, transforms
+import mindspore.dataset as dsets
+from mindspore.dataset import vision
 
 # option file should be modified according to your expriment
 from options import Option
 
-import torchvision.transforms as transforms
+# import torchvision.transforms as transforms
 
 import utils as utils
 from quantization_utils.quant_modules import *
 from pytorchcv.model_provider import get_model as ptcv_get_model
-import torchvision.datasets as dsets
+# import torchvision.datasets as dsets
 import os
 
 # python test.py --model_name cifar10-r20 --model_path pre-trained --conf_path cifar10_resnet20.hocon
@@ -67,15 +73,15 @@ class DataLoader(object):
                                          std=[0.229, 0.224, 0.225])
 
         test_transform = transforms.Compose([
-            transforms.Resize(256),
+            vision.Resize(256),
             # transforms.Scale(256),
-            transforms.CenterCrop(224),
-            transforms.ToTensor(),
+            vision.CenterCrop(224),
+            vision.ToTensor(),
             normalize
         ])
 
-        test_loader = torch.utils.data.DataLoader(
-            dsets.ImageFolder(testdir, test_transform),
+        test_loader = mindspore.dataset.GeneratorDataset(
+            dsets.ImageFolderDataset(testdir, test_transform),
             batch_size=self.batch_size,
             shuffle=False,
             num_workers=self.n_threads,
@@ -99,23 +105,23 @@ class DataLoader(object):
         test_data_root = self.dataset_root
 
         test_transform = transforms.Compose([
-            transforms.ToTensor(),
-            transforms.Normalize(norm_mean, norm_std)])
+            vision.ToTensor(),
+            vision.Normalize(norm_mean, norm_std)])
 
         if self.dataset == "cifar10":
-            test_dataset = dsets.CIFAR10(root=test_data_root,
+            test_dataset = dsets.Cifar10Dataset(root=test_data_root,
                                          train=False,
                                          transform=test_transform,
                                          download=True)
         elif self.dataset == "cifar100":
-            test_dataset = dsets.CIFAR100(root=test_data_root,
+            test_dataset = dsets.Cifar100Dataset(root=test_data_root,
                                           train=False,
                                           transform=test_transform,
                                           download=True)
         else:
             assert False, "invalid data set"
 
-        test_loader = torch.utils.data.DataLoader(dataset=test_dataset,
+        test_loader = mindspore.dataset.GeneratorDataset(dataset=test_dataset,
                                                   batch_size=200,
                                                   shuffle=False,
                                                   pin_memory=True,
@@ -137,28 +143,27 @@ def test(model, test_loader):
     start_time = time.time()
     end_time = start_time
 
-    with torch.no_grad():
-        for i, (images, labels) in enumerate(test_loader):
-            if i % 100 == 0:
-                print(i)
-            start_time = time.time()
+    for i, (images, labels) in enumerate(test_loader):
+        if i % 100 == 0:
+            print(i)
+        start_time = time.time()
 
-            labels = labels.cuda()
-            images = images.cuda()
-            output = model(images)
+        labels = labels.cuda()
+        images = images.cuda()
+        output = model(images)
 
-            loss = torch.ones(1)
-            single_error, single_loss, single5_error = utils.compute_singlecrop(
-                outputs=output, loss=loss,
-                labels=labels, top5_flag=True, mean_flag=True)
+        loss = ops.ones(1)
+        single_error, single_loss, single5_error = utils.compute_singlecrop(
+            outputs=output, loss=loss,
+            labels=labels, top5_flag=True, mean_flag=True)
 
-            top1_error.update(single_error, images.shape(0))
-            top1_loss.update(single_loss, images.shape(0))
-            top5_error.update(single5_error, images.shape(0))
-            end_time = time.time()
+        top1_error.update(single_error, images.shape(0))
+        top1_loss.update(single_loss, images.shape(0))
+        top5_error.update(single5_error, images.shape(0))
+        end_time = time.time()
 
-            if i % 500 == 0:
-                print(i)
+        if i % 500 == 0:
+            print(i)
 
     return top1_error.avg, top1_loss.avg, top5_error.avg
 
@@ -175,7 +180,6 @@ class ExperimentDesign:
         self.prepare()
 
     def prepare(self):
-        self._set_gpu()
         self._set_dataloader()
         self._set_model()
         self._replace()
@@ -184,12 +188,6 @@ class ExperimentDesign:
 
         self.model = ptcv_get_model(self.model_name, pretrained=False)
         self.model.eval()
-
-    def _set_gpu(self):
-        torch.manual_seed(self.settings.manualSeed)
-        torch.cuda.manual_seed(self.settings.manualSeed)
-        assert self.settings.GPU <= torch.cuda.device_count() - 1, "Invalid GPU ID"
-        cudnn.benchmark = True
 
     def _set_dataloader(self):
         # create data loader
@@ -223,14 +221,14 @@ class ExperimentDesign:
 
         # quantize all the activation
         elif type(model) == nn.ReLU or type(model) == nn.ReLU6:
-            return nn.Sequential(*[model, QuantAct(activation_bit=act_bit)])
+            return nn.SequentialCell(*[model, QuantAct(activation_bit=act_bit)])
 
         # recursively use the quantized module to replace the single-precision module
-        elif type(model) == nn.Sequential:
+        elif type(model) == nn.SequentialCell:
             mods = []
             for n, m in model.named_children():
                 mods.append(self.quantize_model(m))
-            return nn.Sequential(*mods)
+            return nn.SequentialCell(*mods)
         else:
             q_model = copy.deepcopy(model)
             for attr in dir(model):
@@ -248,7 +246,7 @@ class ExperimentDesign:
         """
         if type(model) == QuantAct:
             model.fix()
-        elif type(model) == nn.Sequential:
+        elif type(model) == nn.SequentialCell:
             for n, m in model.named_children():
                 self.freeze_model(m)
         else:
@@ -263,7 +261,7 @@ class ExperimentDesign:
         best_top5 = 100
         start_time = time.time()
 
-        pretrained_dict = torch.load(self.model_path)
+        pretrained_dict = mindspore.load_checkpoint(self.model_path)
         pretrained_dict = {k: v for k, v in pretrained_dict.items() if ('cur_x' not in k)}
 
         model_dict = self.model.state_dict()
