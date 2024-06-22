@@ -5,8 +5,6 @@ import time
 import traceback
 import sys
 import copy
-# import torch
-# import torch.nn as nn
 
 import mindspore
 from mindspore import nn
@@ -18,15 +16,13 @@ from mindspore.dataset import vision
 # option file should be modified according to your expriment
 from options import Option
 
-# import torchvision.transforms as transforms
-
 import utils as utils
 from quantization_utils.quant_modules import *
 from pytorchcv.model_provider import get_model as ptcv_get_model
 # import torchvision.datasets as dsets
 import os
 
-# python test.py --model_name cifar10-r20 --model_path pre-trained --conf_path cifar10_resnet20.hocon
+# python test.py
 
 class DataLoader(object):
     """
@@ -109,23 +105,23 @@ class DataLoader(object):
             vision.Normalize(norm_mean, norm_std)])
 
         if self.dataset == "cifar10":
-            test_dataset = dsets.Cifar10Dataset(root=test_data_root,
-                                         train=False,
-                                         transform=test_transform,
-                                         download=True)
+            test_dataset = dsets.Cifar10Dataset(dataset_dir=test_data_root,)
+                                        #  transform=test_transform,
+                                        #  download=True)
         elif self.dataset == "cifar100":
-            test_dataset = dsets.Cifar100Dataset(root=test_data_root,
-                                          train=False,
-                                          transform=test_transform,
-                                          download=True)
+            test_dataset = dsets.Cifar100Dataset(dataset_dir=test_data_root,)
+                                        #   transform=test_transform,
+                                        #   download=True)
         else:
             assert False, "invalid data set"
 
-        test_loader = mindspore.dataset.GeneratorDataset(dataset=test_dataset,
-                                                  batch_size=200,
+        test_loader = mindspore.dataset.GeneratorDataset(source=test_dataset,
+                                                  #batch_size=200,
                                                   shuffle=False,
-                                                  pin_memory=True,
-                                                  num_workers=self.n_threads)
+                                                  #pin_memory=True,
+                                                  #num_workers=self.n_threads
+                                                  )
+
         return None, test_loader
 
 
